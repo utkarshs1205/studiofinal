@@ -90,7 +90,7 @@ export default {
         },
         'scroll': {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(-100%)' },
         },
         'fade-in-up': {
             '0%': {
@@ -109,14 +109,21 @@ export default {
         'blink-caret': {
           'from, to': { borderColor: 'transparent' },
           '50%': { borderColor: 'hsl(var(--primary))' },
-        }
+        },
+        'pulse-slow': {
+          '50%': {
+            opacity: '.85',
+            transform: 'scale(1.02)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'scroll': 'scroll 20s linear infinite',
+        'scroll': 'scroll 40s linear infinite',
         'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
         'typing': 'blink-caret .75s step-end infinite',
+        'pulse-slow': 'pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       animationDelay: {
         '200': '200ms',
@@ -126,13 +133,16 @@ export default {
   },
   plugins: [
     require('tailwindcss-animate'),
-    function({ addUtilities }: { addUtilities: any }) {
+    function({ addUtilities, theme }: { addUtilities: any, theme: any }) {
       addUtilities({
         '.animation-delay-200': {
           'animation-delay': '200ms',
         },
         '.animation-delay-400': {
           'animation-delay': '400ms',
+        },
+        '.paused': {
+          'animation-play-state': 'paused',
         },
       })
     }

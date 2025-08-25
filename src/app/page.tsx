@@ -12,6 +12,20 @@ import { ContactForm } from "@/components/ContactForm";
 import { Mail, Phone, Instagram, Facebook, Twitter, Linkedin, Youtube, Check } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { MotionDiv } from "@/components/Motiondiv";
+
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
 
 
 function HeroSection() {
@@ -42,10 +56,11 @@ function HeroSection() {
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
           Welcome to Grow Media, where we blend creativity with strategy to elevate your social media presence. Let's build something amazing together.
         </p>
-        <div className="animate-fade-in-up animation-delay-400">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground transition-transform duration-300 hover:scale-105">
-            <Link href="#contact">Book a Free Strategy Call</Link>
-          </Button>
+        <div className="mt-10 animate-fade-in-up animation-delay-400">
+          <div className="inline-block bg-secondary text-secondary-foreground font-semibold py-3 px-6 rounded-lg shadow-md border border-border animate-pulse-slow">
+            <span className="text-primary mr-2">✓</span>
+            50+ Happy Clients in 5 Years
+          </div>
         </div>
       </div>
     </section>
@@ -208,11 +223,11 @@ function ServicesSection() {
 
 function ClientsSection() {
   const clients = [
-    { name: "DanBRO", logo: "/l1.jpg", hint: "bakery logo" },
-    { name: "Barbeque Nation", logo: "/l2.png", hint: "restaurant logo" },
-    { name: "EMAAR", logo: "/l3.webp", hint: "fire ritual" },
-    { name: "Krishnamukhi", logo: "/l4.png", hint: "fitness logo" },
-    { name: "Dentique", logo: "/l5.jpg", hint: "tech company logo" },
+    { name: "DANBRO", logo: "/l1.jpg", hint: "bakery logo" },
+    { name: "BARBEQUE NATION", logo: "/l2.png", hint: "restaurant logo" },
+    { name: "EMAAR INDIA", logo: "/l3.webp", hint: "emaar india" },
+    { name: "Reliance Jewels", logo: "/rr.webp", hint: "reliance logo" },
+    { name: "Dentique", logo: "/l5.jpg", hint: "Dental logo" },
   ];
 
   return (
@@ -296,9 +311,10 @@ function PackagesSection() {
       price: "14,999",
       period: "/month",
       features: [
-        "2 Posts Per Week",
-        "2-3 Stories Per Week",
-        "1 Reel Per Week",
+        "6 Posts Per Month",
+        "6 Stories Per Month",
+        "3 Reel Per Month",
+        "2 ads per month(ad charges not included)",
         "Relevant Captions",
         "Hashtag Strategy",
         "Content Calendar (With Time & Date)",
@@ -313,9 +329,10 @@ function PackagesSection() {
       price: "19,999",
       period: "/month",
       features: [
-          "6 Posts Per Week",
-          "6-7 Stories Per Week",
-          "3 Reel Per Week",
+          "2 Posts Per Week",
+          "4 Stories Per Week",
+          "2 Reel Per Week",
+          "3 Ads Per Month(ad charges not included)",
           "Relevant Captions",
           "Hashtag Strategy",
           "Content Calendar (With Time & Date)",
@@ -332,9 +349,10 @@ function PackagesSection() {
         price: '25,999',
         period: '/month',
         features: [
-          '6 Posts Per Week',
-          '6-7 Stories Per Week',
+          '3 Posts Per Week',
+          '4 Stories Per Week',
           '3 Reel Per Week',
+          '4 ads in a month  (ad charges not included)',
           'Relevant Captions',
           'Hashtag Strategy',
           'Content Calendar (With Time & Date)',
@@ -507,7 +525,7 @@ function PackagesSection() {
 function PlatformsSection() {
   const platforms = [
     { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/grow.media.co' },
-    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/grow.media.co' },
+    { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/share/1FPqGdNSrQ/' },
   ];
 
   return (

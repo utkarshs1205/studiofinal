@@ -4,9 +4,9 @@ const services = [
     { name: 'Social Media Marketing.' },
     { name: 'Content Creation.' },
     { name: 'Branding & Packaging.' },
-    { name: 'photoshoot & videoshoot.' },
-    { name: 'influencer marketing.' },
-    { name: 'ads management.' },
+    { name: 'Photoshoot & Videoshoot.' },
+    { name: 'Influencer Marketing.' },
+    { name: 'Ads Management.' },
 ];
 
 const ServiceItem = ({ name }: { name: string }) => (
@@ -17,11 +17,11 @@ const ServiceItem = ({ name }: { name: string }) => (
 
 
 export function StockTicker() {
-  const extendedServices = [...services, ...services, ...services, ...services];
+  const extendedServices = [...services, ...services];
 
   return (
-    <div className="relative w-full overflow-hidden bg-gray-900 py-2 border-b border-border">
-        <div className="flex animate-scroll">
+    <div className="relative w-full overflow-hidden bg-gray-900 py-2 border-b border-border group flex">
+        <div className="flex animate-scroll group-hover:paused">
             {extendedServices.map((service, index) => (
                 <ServiceItem key={index} {...service} />
             ))}

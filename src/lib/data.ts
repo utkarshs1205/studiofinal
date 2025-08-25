@@ -15,7 +15,7 @@ export const services: Service[] = [
   {
     icon: TrendingUp,
     title: 'Social Media Strategy',
-    description: 'We craft data-driven strategies to boost your online presence, engagement, and conversions across all relevant platforms.',
+    description: 'We craft data-driven strategies to increase your online presence, engagement, and conversions across all relevant platforms.',
   },
   {
     icon: PenTool,
